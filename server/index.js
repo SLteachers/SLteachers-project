@@ -3,7 +3,11 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
+import homeRoutes from './routes/home.js'; 
+
 const app =express();
+
+app.use('/',homeRoutes);
 
 app.use(bodyParser.json({limit:"30mb", extend:true}));
 app.use(bodyParser.urlencoded({limit:"30mb", extend:true}));
